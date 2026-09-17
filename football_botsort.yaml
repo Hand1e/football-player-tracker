@@ -1,0 +1,23 @@
+# Football-oriented BoT-SORT configuration
+# Based on the current Ultralytics botsort.yaml options.
+tracker_type: botsort
+
+track_high_thresh: 0.25
+track_low_thresh: 0.10
+new_track_thresh: 0.25
+
+# Keep lost tracks longer than the stock 30 frames.
+# 60 frames is about 2 seconds at 30fps.
+track_buffer: 60
+
+match_thresh: 0.80
+fuse_score: True
+
+# Important for broadcast football footage: compensate for camera pan/zoom motion.
+gmc_method: sparseOptFlow
+
+# Appearance/ReID helps re-associate a player after partial occlusion.
+proximity_thresh: 0.50
+appearance_thresh: 0.80
+with_reid: True
+model: auto
